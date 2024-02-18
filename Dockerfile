@@ -5,6 +5,9 @@ FROM node:${NODE_VERSION}-alpine AS build
 
 WORKDIR /home/node
 
+
+ENV PAYLOAD_SECRET=8vS7e8tco8Vz/iRPfenERsK1M4LjP+yF
+
 # Install dependencies.
 COPY package*.json .
 
@@ -26,8 +29,6 @@ RUN yarn build && yarn cache clean
 FROM node:${NODE_VERSION}-alpine
 
 WORKDIR /home/node
-
-ENV PAYLOAD_SECRET=8vS7e8tco8Vz/iRPfenERsK1M4LjP+yF
 
 # Copy the built application.
 COPY --from=build /home/node /home/node
