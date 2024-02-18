@@ -7,7 +7,8 @@ WORKDIR /home/node
 
 
 ENV PAYLOAD_SECRET=8vS7e8tco8Vz/iRPfenERsK1M4LjP+yF
-
+ENV DATABASE_URI=mongodb://bb24630ce53e71b5:4100d526b050797650b2a6db55f7666b@mongo-0.ecom-db--mfg54m5dzw2h.addon.code.run:27017/b9907ab2653f?replicaSet=rs0&authSource=b9907ab2653f&tls=true
+ENV MONGODBURI=mongodb://bb24630ce53e71b5:4100d526b050797650b2a6db55f7666b@mongo-0.ecom-db--mfg54m5dzw2h.addon.code.run:27017/b9907ab2653f?replicaSet=rs0&authSource=b9907ab2653f&tls=true
 # Install dependencies.
 COPY package*.json .
 
