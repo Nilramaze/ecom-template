@@ -16,6 +16,8 @@ RUN yarn install
 
 # Copy the source files.
 COPY src src
+RUN tsc --project tsconfig.json
+
 COPY tsconfig.json .
 
 # Build the application.
