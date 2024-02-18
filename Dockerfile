@@ -8,6 +8,8 @@ WORKDIR /home/node
 # Install dependencies.
 COPY package*.json .
 
+RUN apk add --no-cache python make g++
+
 RUN yarn install
 
 # Copy the source files.
