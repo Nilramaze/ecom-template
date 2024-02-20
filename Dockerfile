@@ -6,6 +6,7 @@ FROM node:${NODE_VERSION}-alpine AS build
 WORKDIR /home/node
 
 
+
 ENV PAYLOAD_SECRET=8vS7e8tco8Vz/iRPfenERsK1M4LjP+yF
 ENV DATABASE_URI=mongodb+srv://65d12878a3f9a990baeaa885-prod:0a66688ac0bc07c78c05096154edbc@65d12878a3f9a990baeaa88.3u9sr7d.mongodb.net/65d12878a3f9a990baeaa885-prod
 ENV MONGODBURI=mongodb+srv://65d12878a3f9a990baeaa885-prod:0a66688ac0bc07c78c05096154edbc@65d12878a3f9a990baeaa88.3u9sr7d.mongodb.net/65d12878a3f9a990baeaa885-prod
@@ -35,7 +36,7 @@ WORKDIR /home/node
 COPY --from=build /home/node /home/node
 
 # Expose the service's port.
-EXPOSE 3001
+EXPOSE 5500
 
 # Run the service.
 CMD ["yarn", "run", "serve"]
